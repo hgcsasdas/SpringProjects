@@ -5,5 +5,14 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- Aquí puedes configurar tus beans de Spring -->
+    <!-- <bean id="saludator" class="com.hgc88.spring.Saludator"></bean>-->
     
+    
+	<bean id="saludator" class="com.hgc88.referencias.Saludator" primary="true">
+		<property name="mensaje" value="Hola Caracola"></property>	
+	</bean>
+    	<bean id="emailService" class="com.hgc88.referencias.EmailService">
+		<property name="saludator" ref="saludator"></property>
+	</bean>
+
 </beans>

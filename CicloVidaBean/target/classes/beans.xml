@@ -8,10 +8,12 @@
     <!-- <bean id="saludator" class="com.hgc88.spring.Saludator"></bean>-->
     
     
-	<bean id="saludator" class="com.hgc88.referencias.Saludator" primary="true">
+	<bean id="saludator" class="com.hgc.singletonPrototype.Saludator" primary="true">
 		<property name="mensaje" value="Hola Caracola"></property>	
 	</bean>
-    	<bean id="emailService" class="com.hgc88.referencias.EmailService">
+	
+	<!-- EN FUNCION DE SI PONGO SINGLETON O PROTOTYPE SE CREARÁ MÁS DE UN BEAN O NO -->
+    <bean id="emailService" class="com.hgc.singletonPrototype.EmailService" scope="singleton">
 		<property name="saludator" ref="saludator"></property>
 	</bean>
 
